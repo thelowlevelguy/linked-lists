@@ -61,4 +61,53 @@ export class LinkedList {
         }
         return tail.value
     }
+
+    at(index){
+        if (this.firstNode === null) return undefined;
+        let current = this.firstNode;
+        let i = 0;
+        while(current !== null){
+            if (i == index) return current.value;
+            current = current.next;
+            i++;
+        }
+    }
+
+    pop(){
+        if (this.firstNode === null) return undefined;
+        const first = this.firstNode
+        this.firstNode = this.firstNode.next;
+        return first.value;
+    }
+
+    contains(value){
+        let current = this.firstNode;
+        while(current !== null){
+            if (current.value === value) return true;
+            current = current.next; 
+        }
+        return false;
+    }   
+
+    findIndex(value){
+        let current = this.firstNode;
+        let i = 0;
+        while(current !== null){
+            if (current.value === value) return i;
+            current = current.next; 
+            i++
+        }
+        return -1;
+    }
+
+    toString(){
+        let s = "";
+        let current = this.firstNode;
+        while (current !== null){
+            s += `( ${current.value} ) -> `
+            current = current.next;
+        }
+        s += "null"
+        return s;
+    }
 }

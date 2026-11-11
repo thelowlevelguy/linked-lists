@@ -11,6 +11,13 @@ list.append("snake");
 list.append("turtle");
 
 console.log(util.inspect(list, { depth: null, colors: true }));
-console.log(list.size())
-console.log(list.head())
-console.log(list.tail())
+console.log("size:", list.size())
+console.log("head:",list.head())
+console.log("tail",list.tail())
+console.log("at:",list.at(2))
+console.log("pop:",list.pop())
+console.log(util.inspect(list, {depth: null, colors: true}));
+console.log("contains:",list.contains("cat"))
+console.log("findIndex:",list.findIndex("turtle"))
+console.log("toString:", list.toString())
+
