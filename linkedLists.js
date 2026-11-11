@@ -5,9 +5,9 @@ export class LinkedList {
         this.head = null
     }
 
-    append(node){
+    append(value){
         const n = new Node()
-        n.value = node;
+        n.value = value;
 
         if (this.head == null){
             this.head = n;
@@ -21,5 +21,18 @@ export class LinkedList {
         }
         //so we will append the last element 
         current.next = n
+    }
+
+    prepend(value){
+        const n = new Node()
+        n.value = value;
+
+        if (this.head == null){
+            this.head = n;
+            return
+        }
+        const prec = this.head
+        this.head = n;
+        this.head.next = prec
     }
 }
