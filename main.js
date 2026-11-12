@@ -14,10 +14,15 @@ console.log(util.inspect(list, { depth: null, colors: true }));
 console.log("size:", list.size())
 console.log("head:",list.head())
 console.log("tail",list.tail())
-console.log("at:",list.at(2))
+console.log("at:",list.at(0))
 console.log("pop:",list.pop())
 console.log(util.inspect(list, {depth: null, colors: true}));
 console.log("contains:",list.contains("cat"))
 console.log("findIndex:",list.findIndex("turtle"))
 console.log("toString:", list.toString())
+
+list.insertAt(1, 10, 11)
+list.remoteAt(2);
+console.log("toString:", list.toString());
+
 

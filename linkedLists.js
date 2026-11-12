@@ -110,4 +110,39 @@ export class LinkedList {
         s += "null"
         return s;
     }
+
+    insertAt(index, ...args){
+        if (this.firstNode === null) return undefined;
+        if (index < 0 || index > this.size()) throw new RangeError(`Out Of Range ${index}`)
+        let current = this.firstNode;
+        let i = 0;
+        while(i < index){
+            if (i == index - 1) break;
+            current = current.next;
+            i++;
+        }
+        var next = current.next;
+        for (const element of args) {
+            const n = new Node()
+            n.value = element;
+            current.next = n;
+            current = n;
+        }
+        current.next = next
+    }
+
+    remoteAt(index){
+        if (this.firstNode === null) return undefined;
+        if (index < 0 || index > this.size()) throw new RangeError(`Out Of Range ${index}`)
+
+        let current = this.firstNode;
+        let i = 0;
+        while(i < index){
+            if (i == index - 1) break;
+            current = current.next;
+            i++;
+        }
+        current.next = current.next.next
+        
+    }
 }
